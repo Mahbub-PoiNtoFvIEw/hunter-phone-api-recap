@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hunting Phone APi Recap</title>
-</head>
-<body>
-    
+    <!-- Daisy Ui link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.19/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="mx-6 mt-4">
+    <header>
+      <h1 class="text-4xl">Hunting Phone APi...</h1>
+    </header>
+    <main>
+        <!-- search phone -->
+         <section class="flex justify-center items-center">
+            <input type="text" placeholder="Search" id="search-input" class="input input-bordered w-full max-w-xs" />
+            <button onclick="handleSearchPhones()" class="btn btn-active btn-accent">Search Phone</button>
+         </section>
+         <!-- if no data found -->
+         <section id="data-validity-message" class="mt-16 hidden">
+            <h3 class="text-center text-3xl font-bold text-red-700">No Data Found...!</h3>
+         </section>
+         <!-- toggle loading spinner -->
+        <section>
+            <div id="toggle-loading-spinner" class="hidden text-center my-10">
+                <span class="loading loading-spinner text-accent"></span>
+              </div>
+        </section>
+      <!-- display Phone-->
+      <section>
+        <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+        </div>
+      </section>
+      <!-- show all button -->
+      <section class="flex justify-center items-center py-6">
+        <div id="show-all-container" class="hidden">
+            <button onclick="handleShowAll()" class=" btn btn-active btn-accent px-10">Show All</button>
+        </div>
+     </section>
+     <!-- show phone details -->
+      <section>
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="">open modal</button> -->
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="show-details-container">
+
+            </div>
+            <div class="modal-action flex justify-center items-center">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+        </dialog>
+      </section>
+    </main>
+    <footer></footer>
+
     <!-- script -->
-     <script src="JS/phone.js"></script>
-</body>
+    <script src="JS/phone.js"></script>
+  </body>
 </html>

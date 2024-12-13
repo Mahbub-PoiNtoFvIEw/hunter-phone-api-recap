@@ -1,0 +1,1 @@
+console.log('phone is connected with main page');
